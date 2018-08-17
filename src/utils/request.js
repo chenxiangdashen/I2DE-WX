@@ -28,3 +28,18 @@ export default function request(url, options) {
     .then(data => ({ data }))
     .catch(err => ({ err }));
 }
+
+export function parseUrl(url){
+  if (url.indexOf("?") != -1) {
+    url = url.substr(url.indexOf("?") + 1);
+  }
+  var paramsArr = url.match(/[^\?\=\&]*\=[^\?\=\&]*/g);
+  var params = {};
+  if (paramsArr != null) {
+    for(let i in paramsArr){
+      var kv = paramsArr[i].split("=");
+      params[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1]);
+    };
+  }
+  return params;
+}

@@ -19,8 +19,6 @@ const Products = ({dispatch, products}) => {
 };
 
 // export default Products;
-export default connect(({products},a) => {
-  console.log(a)
-  return {products}
-
-})(Products);
+export default connect(({products}) => ({
+  products,
+}))(Products);
