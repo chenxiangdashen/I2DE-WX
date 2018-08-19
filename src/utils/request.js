@@ -1,4 +1,5 @@
 import fetch from 'dva/fetch';
+import axios from 'axios';
 
 function parseJSON(response) {
   return response.json();

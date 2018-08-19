@@ -1,0 +1,31 @@
+
+.content{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: #fff;
+  padding: 0px 10px;
+  border-bottom :1px solid #cfcfcf;
+}
+
+.head{
+  height: 32px;
+  width:40px;
+  background: url(../../assets/head_img.png) no-repeat center 0;
+  background-size: 32px 32px;
+}
+
+.left{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn{
+  background-color: #5e8bff;
+  padding: 3px 15px;
+  border-radius: 3px;
+  color: white;
+  font-size: 14px;
+}

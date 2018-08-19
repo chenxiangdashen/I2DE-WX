@@ -8,10 +8,15 @@
   },
   "dependencies": {
     "antd": "^3.8.1",
+    "antd-mobile": "^2.2.3",
+    "axios": "^0.18.0",
     "babel-plugin-import": "^1.8.0",
     "dva": "^2.4.0",
+    "intl-messageformat": "^2.2.0",
+    "rc-form": "^2.2.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-intl": "^2.4.0"
   },
   "devDependencies": {
     "babel-plugin-dva-hmr": "^0.3.2",
@@ -26,9 +31,9 @@
     "roadhog": "^2.0.0"
   },
   "proxy": {
-    "/api": {
+    "/MobileApp/Share/Public": {
       "target": "https://i2wenwen.cn:8543",
-      "ws": true
+      "changeOrigin": true
     }
   }
 }

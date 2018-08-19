@@ -1,30 +1,37 @@
-import request,{parseUrl} from '../utils/request'
-
+import request, {parseUrl} from '../utils/request'
+import axios from 'axios';
+import {getShareData} from '../utils/server'
 
 export default {
   namespace: 'login',
-  state:  {
-    shareObj: [],      // 存放用户列表
+  state: {
+    visible: false,
+    data:[],
   },
   reducers: {
-
+    save(state, { payload: data }) {
+      console.log(data)
+      return { ...state, data }
+    }
   },
 
   effects: {
-    * query ({ payload = {} }, { call, put }) {
-      // 获取用户列表，赋值给 userList
-      // 使用 axios 或者 ajax 请求后台返回数据
-      const result = request('')
-      // 调用 reducers 中的 updateState 方法改变 state 中 userList 的值
+    * query({search}, {put, call}) {
+      const queryObj = yield call(getShareData, {});
+      console.log('query ');
+      console.log(queryObj);
+      // getShareData(search).then(res=>{
+      //   put({ type: 'save', payload: '123'})
+      // })
+      yield put({ type: 'save', payload: queryObj})
     }
   },
   subscriptions: {
-    setup ({dispatch, history}) {
-      history.listen(( {pathname , search }) => {
-        if(pathname=='/'){
-          dispatch()
-          console.log(parseUrl(search))
-        }
+        setup({dispatch, history}) {
+          history.listen(({pathname, search}) => {
+            if (pathname == '/') {
+              dispatch({type: 'query', search})
+            }
 
       })
     }

@@ -1,0 +1,13 @@
+.content{
+  background-color: #fff;
+  display: flex;
+  height:100%;
+}
+
+.head{
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  font-size: 20px;
+  color:#3f3f3f;
+}
