@@ -6,8 +6,6 @@ class Head extends React.Component {
 
 
   render (){
-
-    console.log(this)
     return <div className={style.content}>
           <div className={style.left}>
             <div className={style.head}>
