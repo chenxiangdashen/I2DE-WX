@@ -8,11 +8,19 @@ class Share extends React.Component {
 
   render() {
 
-    console.log(this)
+    let data = this.props.share.data;
     return (
       <div className={style.content}>
 
           <div className={style.head}>
+            <FormattedMessage
+              id='I2wenwen'
+            />
+          </div>
+
+
+          <div className={style.title}>
+            <span>{data.senderName}</span>
             <FormattedMessage
               id='I2wenwen'
             />

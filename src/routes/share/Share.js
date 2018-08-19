@@ -6,13 +6,10 @@ import Head from '../../components/head/Head';
 class Share extends React.Component {
 
   render() {
-
-    console.log(this)
-
     return (
-      <div style={{flex: 1, backgroundColor: '#fff'}}>
+      <div style={{backgroundColor: '#fff'}}>
         <Head/>
-        <ShareCompoents/>
+        <ShareCompoents share={this.props.shares}/>
       </div>
     );
   }
