@@ -5,5 +5,8 @@
 const prefix = '' // api地址前缀
 export default ({
   // example api
-  "getShareData": "/MobileApp/Share/Public/getShareData.do"
+  "getShareData": "/MobileApp/Share/Public/getShareData.do",
+  "checkExistence": "/MobileApp/Common/Public/checkExistence.do",
+  "login": "/MobileApp/Common/Public/login.do",
+  "register": "/MobileApp/Common/Public/login.do",
 })

@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './head.css'
+import style from './index.css'
 import { injectIntl, FormattedMessage } from 'react-intl';
 
 class Head extends React.Component {

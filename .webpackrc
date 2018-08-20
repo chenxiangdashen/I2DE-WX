@@ -1,8 +1,8 @@
 {
 "extraBabelPlugins": [
   ["import", { "libraryName": "antd-mobile", "libraryDirectory": "es", "style": "css" }]
-
 ],
+"theme": "./src/theme.js",
 "proxy": {
    "/MobileApp": {
          "target": "https://i2wenwen.cn:8543",

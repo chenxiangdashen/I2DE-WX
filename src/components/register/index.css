@@ -1,0 +1,54 @@
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+.content{
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.head{
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 8px;
+  font-size: 20px;
+  text-align: center;
+  color:#3f3f3f;
+}
+
+
+.title{
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+  color:#3f3f3f;
+}
+
+.text{
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  font-size: 14px;
+  text-align: center;
+  color:#5e8bff;
+}
+
+.textInput{
+
+}
+
+.btn{
+  margin: 0 20px;
+}
+
+.input{
+  border: 1px solid #cfcfcf;
+  margin: 0 20px;
+  border-radius: 4px;
+  padding: 2px 0;
+}
