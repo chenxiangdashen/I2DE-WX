@@ -1,5 +1,5 @@
 
-import {register from '../utils/server'
+import {login} from '../utils/server'
 
 export default {
   namespace: 'register',

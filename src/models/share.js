@@ -6,7 +6,6 @@ import { routerRedux } from 'dva/router';
 export default {
   namespace: 'shares',
   state: {
-    visible: false,
     data:[],
   },
   reducers: {

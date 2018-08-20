@@ -14,7 +14,6 @@ export default {
     * loigning(data,{call}){
       const queryObj = yield call( login, data.value);
 
-
       console.log(queryObj)
     }
   },
