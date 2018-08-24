@@ -20,17 +20,21 @@ class Login extends React.Component {
       cellphone:cellphone.replace(/\s/g, '')
     }
     console.log(value)
-    this.props.dispatch({type: 'login/loigning',value});
+    let commitData ={
+      value:value,
+      param:this.props.match.params
+    }
+    this.props.dispatch({type: 'login/loigning', commitData});
   }
 
   render() {
 
-    console.log(this)
+    console.log(this.props.match.params)
 
     return (
       <div className={style.content}>
         <Head/>
-        <LoginCompoents onClick={this.logining}/>
+        <LoginCompoents onClick={this.logining} data={this.props.match.params || {}}/>
       </div>
     );
   }

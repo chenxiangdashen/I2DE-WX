@@ -1,5 +1,5 @@
 import React from 'react';
-import {List, InputItem, Toast, WhiteSpace, Button} from 'antd-mobile';
+import { InputItem, Toast, WhiteSpace, Button} from 'antd-mobile';
 import {createForm} from 'rc-form';
 import style from './index.css';
 import {injectIntl, FormattedMessage} from 'react-intl';
@@ -9,9 +9,10 @@ class Login extends React.Component {
 
   constructor(props){
     super(props)
+    console.log(this.props.data)
     this.state = {
       hasError: false,
-      cellphone: '',
+      cellphone: this.props.data.cellPhone || '',
       password: '',
     }
   }

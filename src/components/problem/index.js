@@ -1,105 +1,88 @@
 import React from 'react';
-import {List, InputItem, Toast, WhiteSpace, Button} from 'antd-mobile';
-import {createForm} from 'rc-form';
-import style from './index.css';
-import {injectIntl, FormattedMessage} from 'react-intl';
+import less from './less.less';
+import Avater from '../common/avater';
+import ProblemContent from '../common/problemContent';
+import StatusView from '../common/status';
+import SolutionCutOffDateView from '../common/solutionCutOffDate';
+import RespondentView from '../common/respondent';
+import ProblemPropsView from '../common/problemProps';
+import PriorityView from '../common/priority';
+import TagsView from '../common/tags';
+import AssociatedPartView from '../common/associatedPart';
+import {injectIntl} from 'react-intl';
 
-class Login extends React.Component {
+class Problem extends React.Component {
 
 
   constructor(props){
     super(props)
     this.state = {
-      hasError: false,
-      cellphone: '',
-      password: '',
+
     }
   }
 
-
-
-  onErrorClick = () => {
-    if (this.state.hasError) {
-      Toast.info('Please enter 11 digits');
-    }
-  }
-
-  onChange = (cellphone) => {
-    if (cellphone.replace(/\s/g, '').length < 11) {
-      this.setState({
-        hasError: true,
-      });
-    } else {
-      this.setState({
-        hasError: false,
-      });
-    }
-    this.setState({
-      cellphone,
-    });
-  }
 
 
   render() {
 
-    const {intl} = this.props;
+    console.log(this.props)
+
+    const {intl , data } = this.props;
+
     return (
-      <div className={style.content}>
+      <div>
+        {
+          data?
+            <div className={less.content}>
 
-        <div className={style.head}>
-          <FormattedMessage
-            id='I2wenwen'
-          />
-        </div>
+              <div className={less.head}>
+                <Avater text={data.owner.firstName}/>
+                <div className={less.nameText}>
+                  {data.owner.firstName}
+                </div>
+                <div className={less.dateText}>
+                  {data.dateCreated}
+                </div>
+              </div>
+
+              <div className={less.title}>
+                {data.title}
+              </div>
+
+              <div className={less.body}>
+                <ProblemContent data={data.contents}/>
+              </div>
 
 
-        <div className={style.title}>
-          <FormattedMessage
-            id='loginAndLook'
-          />
-        </div>
+              <div className={less.property}>
+                <StatusView data={data}/>
+
+                <RespondentView solver={data.solver} worker={data.worker}/>
+
+                <PriorityView data={data.importance}/>
+
+                <SolutionCutOffDateView data={data.solutionCutOffDate}/>
+
+                <ProblemPropsView propertys={data.propertys} propertyColumns={data.propertyColumns}/>
+              </div>
+
+              <div className={less.tags}>
+                <TagsView data={data.issueTags}/>
+
+                <AssociatedPartView data={data.relates}/>
+              </div>
 
 
-        <div className={style.input}>
-          <InputItem
-            className={style.textInput}
-            style={{height: 46,fontSize:14}}
-            type="phone"
-            placeholder={intl.messages.phoneCell}
-            error={this.state.hasError}
-            onErrorClick={this.onErrorClick}
-            onChange={this.onChange}
-            value={this.state.cellphone}
-          />
+            </div>
 
-          <InputItem
-            className={style.textInput}
-            style={{height: 46,fontSize:14}}
-            type="password"
-            placeholder={intl.messages.confirmPassword}
-            onChange={(value)=>{
-              this.setState({
-                password:value
-              })
-            }}
-            value={this.state.password}
-          />
-        </div>
+            :null
 
-        <WhiteSpace/>
-        <WhiteSpace/>
+        }
 
-        <div className={style.btn}>
-          <Button
-            disabled={this.state.hasError || !this.state.cellphone.length > 0 || !this.state.password.length>0}
-            type="primary"
-            onClick={()=>this.props.onClick(this.state.password,this.state.cellphone)}>
-            {intl.messages.login}
-          </Button>
-        </div>
+
       </div>
     );
   }
 }
 
-export default createForm()(injectIntl(Login));
+export default injectIntl(Problem)

@@ -1,24 +1,32 @@
 import {login} from '../utils/server'
+import {getDetailIssues} from '../utils/server'
 
 export default {
   namespace: 'problem',
   state: {
-    data: [],
   },
-  reducers: {},
-
-  effects: {
-    * loigning(data, {call}) {
-      const queryObj = yield call(login, data.value);
-      console.log(queryObj)
+  reducers: {
+    getDetailIssues(state, { payload: data }) {
+      console.log(data);
+      if(data.code===0){
+        data = data.data;
+        return { ...state, data}
+      }
+      return {...state}
     }
   },
-  subscriptions: {
-    setup({dispatch, history}) {
-      history.listen((a) => {
-        console.log(a)
-      })
+
+  effects: {
+    * query({param}, {put, call}) {
+      console.log(param)
+      const queryObj = yield call( getDetailIssues, param);
+      console.log(queryObj)
+      yield put({ type: 'getDetailIssues', payload: queryObj.data})
     },
+
+  },
+  subscriptions: {
+
   }
 
 };

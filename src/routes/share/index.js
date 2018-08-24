@@ -6,16 +6,20 @@ import style from './index.css';
 
 class Share extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props)
 
-    this.checkExistence=this.checkExistence.bind(this)
+    this.checkExistence = this.checkExistence.bind(this)
   }
 
-  checkExistence(value){
+  checkExistence(value) {
     console.log(value)
-    value=value.replace(/\s/g, '')
-    this.props.dispatch({type: 'shares/checkExistence',value:value});
+    value = value.replace(/\s/g, '')
+    let data = {
+      value: value,
+      ...this.props.shares.data,
+    }
+    this.props.dispatch({type: 'shares/checkExistence', data});
   }
 
   render() {

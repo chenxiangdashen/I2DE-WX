@@ -11,7 +11,6 @@ function getXtoken() {
 
 axios.interceptors.request.use(
   config => {
-    console.log(config)
     var xtoken = getXtoken(config)
 
     config.headers['tid'] = xtoken.tid
@@ -27,7 +26,7 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(function (response) {
     // token 已过期，重定向到登录页面
-    if (response.data.code == 4) {
+    if (response.data.code === 4) {
       localStorage.clear()
     }
 
@@ -36,8 +35,6 @@ axios.interceptors.response.use(function (response) {
       store.set('sid', response.headers.sid)
       store.set('tid', response.headers.tid)
     }
-
-    console.log(response)
     return response
   }, function (error) {
     // Do something with response error

@@ -11,15 +11,19 @@ class Problem extends React.Component {
 
   }
 
-  l
+  componentWillMount(){
+    let param = this.props.match.params;
+    this.props.dispatch({type: 'problem/query', param});
+  }
+
   render() {
 
-    console.log(this.props.problem)
+    console.log(this.props.match)
 
     return (
       <div className={style.content}>
         <Head/>
-        <ProblemCompoents data={this.props.problem}/>
+        <ProblemCompoents data={this.props.problem.data}/>
       </div>
     );
   }

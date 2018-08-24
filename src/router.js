@@ -21,8 +21,8 @@ function RouterConfig({history}) {
           <Route path="/" exact component={Share}/>
           <Route path="/products" exact component={Products}/>
           <Route path="/register" exact component={Register}/>
-          <Route path="/login" exact component={Login}/>
-          <Route path="/problem" exact component={Problem}/>
+          <Route path="/login/:objectID/:cropID/:cellPhone" exact component={Login}/>
+          <Route path="/problem/:objectID/:cropID" exact component={Problem}/>
         </Switch>
       </Router>
     </IntlProvider>

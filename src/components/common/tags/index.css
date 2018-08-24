@@ -1,0 +1,18 @@
+
+.div_content {
+  flex:1;
+  display:flex;
+  align-items: center;
+  margin-left:15px;
+  min-height: 44px;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.div_div{
+  display:flex;
+  align-items: center;
+  flex-direction: row;
+  min-height: 44px;
+  background-color: #fff;
+  padding-left: 14px;
+}

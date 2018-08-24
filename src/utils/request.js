@@ -1,5 +1,4 @@
 import fetch from 'dva/fetch';
-import axios from 'axios';
 
 function parseJSON(response) {
   return response.json();
@@ -36,7 +35,7 @@ export function parseUrl(url){
   }
   var paramsArr = url.match(/[^\?\=\&]*\=[^\?\=\&]*/g);
   var params = {};
-  if (paramsArr != null) {
+  if (paramsArr !== null) {
     for(let i in paramsArr){
       var kv = paramsArr[i].split("=");
       params[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1]);
