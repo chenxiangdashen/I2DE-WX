@@ -1,7 +1,8 @@
 const zh_CN = {
   open:'打开',
   I2wenwen:'I2问问',
-  shareForYou:'向你分享问题',
+  shareForYouProblem:'向你分享问题',
+  shareForYouPart:'向你分享零件',
   look:'查看',
   phoneCell:'手机号',
   loginAndLook:'登录并查阅',
@@ -19,6 +20,16 @@ const zh_CN = {
   veryImportant: '非常重要',
   noTagsAdded: '未添加标签',
   associatedPart: '关联零件',
+  notAdded: '未添加',
+  latestAnswer: '最新回答',
+  image: '图片',
+  voice: '语音',
+  participant: '参与者',
+  noParticipants: '没有参与者',
+  alreadyInEnd: '已经到底喽',
+  attributes: '属性',
+  threeD: '三维',
+  commented: '评论',
 }
 
 

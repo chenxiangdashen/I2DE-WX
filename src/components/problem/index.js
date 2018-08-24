@@ -8,8 +8,12 @@ import RespondentView from '../common/respondent';
 import ProblemPropsView from '../common/problemProps';
 import PriorityView from '../common/priority';
 import TagsView from '../common/tags';
+import LatestAnswerView from '../common/latestAnswer';
+import DiscusserView from '../common/discusser';
 import AssociatedPartView from '../common/associatedPart';
+import LoggersView from '../common/loggers';
 import {injectIntl} from 'react-intl';
+
 
 class Problem extends React.Component {
 
@@ -67,10 +71,26 @@ class Problem extends React.Component {
               </div>
 
               <div className={less.tags}>
-                <TagsView data={data.issueTags}/>
+
+                {
+                  data.issueTags ?
+                    <TagsView data={data.issueTags || []}/>
+                    :null
+                }
+
 
                 <AssociatedPartView data={data.relates}/>
               </div>
+
+              <div className={less.tags}>
+                <LatestAnswerView data={data.leastSolution}/>
+              </div>
+
+              <div className={less.tags}>
+                <DiscusserView data={data}/>
+              </div>
+
+              <LoggersView data={data.logs}/>
 
 
             </div>

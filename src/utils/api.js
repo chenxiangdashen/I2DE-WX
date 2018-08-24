@@ -10,4 +10,5 @@ export default ({
   "login": "/MobileApp/Common/Public/login.do",
   "register": "/MobileApp/Common/Public/login.do",
   "getDetailIssues": "/MobileApp/Issue/getIssueDetail.do",
+  "getPartDetailView": "/MobileApp/Part/getPartDetailView.do\n",
 })

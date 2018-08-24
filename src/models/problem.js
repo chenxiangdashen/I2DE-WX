@@ -18,9 +18,7 @@ export default {
 
   effects: {
     * query({param}, {put, call}) {
-      console.log(param)
       const queryObj = yield call( getDetailIssues, param);
-      console.log(queryObj)
       yield put({ type: 'getDetailIssues', payload: queryObj.data})
     },
 

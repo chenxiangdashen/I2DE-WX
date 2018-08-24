@@ -26,8 +26,14 @@ export function register(param) {
   return http.post(apis.login, qs.stringify(param))
 }
 
-// 登陆
+// 获取问题详情
 export function getDetailIssues(param) {
   console.log(qs.stringify(param))
   return http.post(apis.getDetailIssues, qs.stringify(param))
+}
+
+// 获取零件详情
+export function getPartDetailView(param) {
+  console.log(qs.stringify(param))
+  return http.post(apis.getPartDetailView, qs.stringify(param))
 }

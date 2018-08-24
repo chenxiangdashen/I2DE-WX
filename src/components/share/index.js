@@ -53,10 +53,14 @@ class Share extends React.Component {
 
 
         <div className={style.title}>
-          <span>{data.senderName}</span>
-          <FormattedMessage
-            id='shareForYou'
-          />
+          {
+            data.type=='Part'?
+              <span>{data.senderName}{intl.messages.shareForYouPart}</span>
+              :
+              <span>{data.senderName}{intl.messages.shareForYouProblem}</span>
+          }
+
+
           <p className={style.text}>
             {data.targetName}
           </p>

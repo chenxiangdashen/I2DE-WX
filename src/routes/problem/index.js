@@ -18,8 +18,6 @@ class Problem extends React.Component {
 
   render() {
 
-    console.log(this.props.match)
-
     return (
       <div className={style.content}>
         <Head/>

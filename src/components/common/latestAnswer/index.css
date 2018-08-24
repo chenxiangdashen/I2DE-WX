@@ -1,0 +1,19 @@
+
+.div_content {
+  flex:1;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left:15px;
+  height: 44px;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.div_div{
+  display:flex;
+  align-items: center;
+  height: 44px;
+  flex-direction: row;
+  background-color: #fff;
+  padding-left: 14px;
+}

@@ -37,12 +37,20 @@ export default {
       console.log(shares)
       let param = {
         objectID:shares.data.targetID,
-        corpID:shares.data.targetCorp
+        corpID:shares.data.targetCorp,
+        type:shares.data.type,
+        basePartID:shares.data.basePartID,
       }
 
       if(queryObj.data.code===0 && queryObj.data.data>0){
         param.cellphone = data.value
-        yield put(routerRedux.push(`/login/${param.objectID}/${param.corpID}/${param.cellphone}`));
+        yield put(routerRedux.push(`/login/${param.objectID}/${param.corpID}/${param.cellphone}/${param.type}/${param.basePartID}`));
+        // if(param.type=='Part'){
+        //   yield put(routerRedux.push(`/login/${param.objectID}/${param.corpID}/${param.cellphone}/${param.type}/${param.basePartID}`));
+        // }else{
+        //   yield put(routerRedux.push(`/login/${param.objectID}/${param.corpID}/${param.cellphone}/${param.type}`));
+        // }
+
 
       }else{
         yield put(routerRedux.push('/register'));

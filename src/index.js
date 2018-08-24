@@ -16,6 +16,7 @@ app.model(require('./models/products').default);
 app.model(require('./models/share').default);
 app.model(require('./models/login').default);
 app.model(require('./models/problem').default);
+app.model(require('./models/fileSet').default);
 
 // 4. Router
 app.router(require('./router').default);

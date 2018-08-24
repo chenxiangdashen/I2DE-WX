@@ -3,7 +3,7 @@ import style from './index.css';
 import {injectIntl} from 'react-intl';
 import {getRandomColor} from  '../../../utils/common'
 
-class Problem extends React.Component {
+class Avater extends React.Component {
 
 
   constructor(props){
@@ -27,4 +27,4 @@ class Problem extends React.Component {
   }
 }
 
-export default injectIntl(Problem)
+export default injectIntl(Avater)

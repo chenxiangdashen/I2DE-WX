@@ -1,0 +1,20 @@
+
+.div_div {
+  align-items: center;
+  background-color: #fff;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+.proText {
+  margin-left: 10px;
+  font-size: 15px;
+  color: #323232
+}

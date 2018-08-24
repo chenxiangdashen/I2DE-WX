@@ -32,6 +32,7 @@ class AssociatedPart extends React.Component {
 
       <div style={{backgroundColor: '#fff', paddingHorizontal: 14}}>
         {
+          data.length>0?
           data.map((obj, i) => {
             return <div key={i} style={{
               flexDirection: 'row',
@@ -51,13 +52,25 @@ class AssociatedPart extends React.Component {
               <div>
                 <Icon
                   type='youjiantou'
-                  style={{fontSize: 12, color: color}}
+                  style={{fontSize: 12, color: color,marginRight:10}}
                 />
               </div>
 
             </div>
 
           })
+            :
+            <div style={{
+              flexDirection: 'row',
+              alignItems: 'center',
+              marginLeft: 48,
+              display:'flex',
+              height: 45,
+              flex: 1,
+
+            }}>
+                  <span style={{color: '#c0c4c8', fontSize: 14}}>{intl.messages.notAdded}</span>
+            </div>
         }
       </div>
     </div>
